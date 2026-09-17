@@ -1,3 +1,11 @@
+## Attribution
+
+This project is based on
+[finance-tracker-api](https://github.com/Franklindot04/finance-tracker-api)
+by Ajero Franklin (Franklindot04), licensed under the MIT License.
+
+Modifications and deployment configuration are maintained by ROXANA-IULIA MIU.
+
 # Finance Tracker API 📊  
 Production‑Ready FastAPI Backend with AWS ECS Fargate & Terraform.
 
