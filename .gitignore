@@ -8,3 +8,12 @@ terraform.tfstate.backup
 .terraform.lock.hcl
 .vscode/
 finance.db
+.venv/
+venv/
+
+__pycache__/
+*.pyc
+.venv/
+venv/
+app-logs.txt
+deployment-success-logs.txt
