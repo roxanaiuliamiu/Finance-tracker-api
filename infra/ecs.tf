@@ -79,7 +79,8 @@ resource "aws_ecs_task_definition" "app" {
         protocol      = "tcp"
       }]
 
-      environment = [
+            environment = [
+        { name = "DATABASE_URL", value = "postgresql://${var.db_username}:${var.db_password}@${aws_db_instance.postgres.address}:5432/${var.db_name}" },
         { name = "DATABASE_HOST", value = aws_db_instance.postgres.address },
         { name = "DATABASE_USER", value = var.db_username },
         { name = "DATABASE_PASSWORD", value = var.db_password },
@@ -162,11 +163,11 @@ resource "aws_ecs_service" "app" {
 
   network_configuration {
     subnets = [
-      aws_subnet.private_a.id,
-      aws_subnet.private_b.id
+      aws_subnet.public_a.id,
+      aws_subnet.public_b.id
     ]
     security_groups  = [aws_security_group.ecs_sg.id]
-    assign_public_ip = false
+    assign_public_ip = true
   }
 
   load_balancer {
